@@ -1,0 +1,2 @@
+# Base UI. For actual inference, install with: python -m pip install -e '.[ml]'
+-e .

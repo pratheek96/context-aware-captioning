@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-caption"
+version = "0.1.0"
+description = "Editable speaker-aware captions with word timestamps and optional text emotion cues"
+requires-python = ">=3.10,<3.14"
+dependencies = ["streamlit==1.66.1", "pandas>=2.2,<3"]
+
+[project.optional-dependencies]
+ml = ["whisperx==3.8.6", "transformers>=4.48,<5"]
+dev = ["ruff>=0.9,<1"]
+
+[project.scripts]
+context-caption = "context_caption.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

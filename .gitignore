@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+outputs/
+uploads/
+models/
+*.wav
+*.mp3
+*.mp4
+*.mkv
+.DS_Store
+
+# Bundled synthetic sample only
+!examples/demo.wav
