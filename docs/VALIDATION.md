@@ -12,7 +12,8 @@ Authoring environment: Python 3.12.14, Streamlit 1.66.1, Linux, FFmpeg available
 - Source compatibility: WhisperX 3.8.6 wheel inspected for the adapter signatures used by this project.
 - Browser visual/playback test: not completed; the browser binary download failed in this environment.
 - Real-model smoke test: pending a Hugging Face token, accepted model conditions, and ML installation.
-- Python 3.10/3.13 CI: workflow supplied; results pending the repository's first GitHub Actions run.
+- Supported Python versions: 3.11–3.13, matching Streamlit 1.66.1's Python >=3.11 requirement.
+- CI matrix: Python 3.11, 3.12, and 3.13; see the Actions tab for results of the compatibility fix.
 - GitHub repository: `pratheek96/context-aware-captioning`, private.
 - GitHub CI: workflow supplied; inspect the Actions tab for the current run status.
 

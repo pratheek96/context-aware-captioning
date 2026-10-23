@@ -21,8 +21,9 @@ pyannote speaker diarization, and optional transcript-based emotion cues in an e
 
 ## Start with the demo
 
-Use Python 3.12 for the simplest match to local validation. The package accepts Python 3.10–3.13;
-other versions are configured in CI but have not been tested in the authoring environment.
+Use Python 3.12 for the simplest match to local validation. The package accepts Python 3.11–3.13;
+Python 3.10 is unsupported because Streamlit 1.66.1 requires Python 3.11 or newer.
+CI checks all three supported Python versions.
 
 ```bash
 cd context-caption
