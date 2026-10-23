@@ -18,3 +18,6 @@ Authoring environment: Python 3.12.14, Streamlit 1.66.1, Linux, FFmpeg available
 - GitHub CI: workflow supplied; inspect the Actions tab for the current run status.
 
 No ASR, diarization, emotion accuracy, or HCI study outcomes are claimed.
+
+CI setup also validates the wheel-bundled FFmpeg executable before running media tests.
+The workflow uses Node.js 24 actions (`checkout@v6`, `setup-python@v6`) on Ubuntu 24.04.

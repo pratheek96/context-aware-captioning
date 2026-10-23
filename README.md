@@ -119,6 +119,9 @@ Tests exercise caption behavior, import/export, security escaping, media convers
 stubbed ML modules, and the Streamlit editing flow. **Stubbed ML tests do not validate model quality**.
 The optional real-model smoke test in [docs/EVALUATION.md](docs/EVALUATION.md) needs your model access.
 CI installs the base/dev package, not GPU dependencies or gated models.
+It uses Ubuntu 24.04 and an FFmpeg executable bundled in the `imageio-ffmpeg==0.6.0` wheel,
+so media tests do not depend on Ubuntu package-mirror speed. Local users should still install
+FFmpeg as described above.
 
 ## Important behavior and limits
 

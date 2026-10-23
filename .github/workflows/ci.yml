@@ -4,24 +4,22 @@ permissions:
   contents: read
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     strategy:
+      fail-fast: false
       matrix:
         python-version: ['3.11', '3.12', '3.13']
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Ensure FFmpeg is available
+      - name: Install project and bundled CI FFmpeg
         timeout-minutes: 5
-        run: |
-          if ! command -v ffmpeg >/dev/null 2>&1; then
-            sudo apt-get update
-            sudo apt-get install -y ffmpeg
-          fi
-          ffmpeg -version
-      - run: python -m pip install -e '.[dev]'
-      - run: ruff check .
+        run: python -m pip install -e '.[dev]' 'imageio-ffmpeg==0.6.0'
+      - name: Configure FFmpeg
+        timeout-minutes: 1
+        run: python scripts/setup_ci_ffmpeg.py
+      - run: python -m ruff check .
       - run: python -m unittest discover -s tests -v
